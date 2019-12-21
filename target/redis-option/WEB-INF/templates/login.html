@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ToolsManage-Redis登录</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+    <link th:href="@{/static/plugins/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/static/css/redis/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/static/css/redis/material-design-iconic-font.min.css}">
+    <link rel="stylesheet" th:href="@{/static/css/redis/util.css}">
+    <link rel="stylesheet" th:href="@{/static/css/redis/main.css}">
+</head>
+
+<body>
+
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('/static/images/login-bg.png');">
+        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+            <form class="login100-form validate-form" method="post" th:action="@{/admin/redis/login}">
+                <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+                    <img th:src="@{/static/images/logo.png}" alt="NO IMG" width="300">
+                </div>
+                <span class="login100-form-title p-b-49">连接</span>
+                <div th:if="${error_msg} != null" style="display: flex; justify-content: center; color: red;">
+                    [[ ${error_msg} ]]
+                </div>
+                <div class="wrap-input100 m-b-23" data-validate="请输入用户名">
+                    <span class="label-input100">用户名</span>
+                    <input class="input100" type="text" name="username" placeholder="请随便输入一个用户名" autocomplete="off">
+                    <span class="focus-input100" data-symbol="&#xf206;"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="请输入想要连接的数据库号码">
+                    <span class="label-input100">数据库号</span>
+                    <input class="input100" type="number" name="database_number" placeholder="请输入想要连接的数据库号码(0-15)">
+                    <span class="focus-input100" data-symbol="&#xf190;"></span>
+                </div>
+
+                <div class="text-right p-t-8 p-b-31">
+                    <a href="javascript:"></a>
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <div class="wrap-login100-form-btn">
+                        <div class="login100-form-bgbtn"></div>
+                        <button class="login100-form-btn" type="submit">点击连接</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/static/js/jq/jquery.min.js}"></script>
+<script th:src="@{/static/js/main.js}"></script>
+</body>
+
+</html>
