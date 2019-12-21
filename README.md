@@ -1,0 +1,2 @@
+# ToolsManageRedis
+一个web端redis管理工具，提供给ToolsManage对redis管理的支持
